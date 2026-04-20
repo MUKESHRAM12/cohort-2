@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@property --bgcolor {
+  syntax: "<color>";
+  initial-value: blue;
+  inherits: false;
+}
+
+@keyframes animatebgcolor {
+  from {
+    --bgcolor: yellow;
+  }
+  to {
+    --bgcolor: red;
+  }
+}
+
+.box {
+  height: 200px;
+  width: 400px;
+  background: var(--bgcolor);
+  animation: animatebgcolor 10s forwards;
+}
